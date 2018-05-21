@@ -1,0 +1,6 @@
+{
+    "name": "Dartmouth auto-login",
+    "version": "1.0",
+    "description": "Automatically logs you into your Dartmouth stuff",
+    "manifest_version": 2
+}
