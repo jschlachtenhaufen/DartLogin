@@ -1,34 +1,34 @@
 {
-    "name": "Dartmouth Auto-Login Chrome Extension",
+    "name": "Dart Login",
     "version": "1.0",
     "author": "John Schlachtenhaufen",
     "description": "Automatically logs you into Dartmouth SSO when accessing Dartmouth pages",
-    "permissions": ["activeTab",  "declarativeContent", "storage"],
+    "permissions": ["storage"],
     "background": {
-        "scripts": ["background.js"],
+        "scripts": ["js/background.js"],
         "persisent": false
     },
     "content_scripts": [
         {
             "matches": ["*://websso.dartmouth.edu/*"],
-            "js": ["main.js"]
+            "js": ["js/main.js"]
         }
     ],
     "browser_action": {
-        "default_popup": "popup.html",
+        "default_popup": "views/popup.html",
         "default_icon": {
-            "16": "images/get_started16.png",
-            "32": "images/get_started32.png",
-            "48": "images/get_started48.png",
-            "128": "images/get_started128.png"
+            "16": "images/icon16.png",
+            "32": "images/icon32.png",
+            "48": "images/icon48.png",
+            "128": "images/icon128.png"
         }
     },
-    "options_page": "options.html",
+    "options_page": "views/options.html",
     "icons": {
-        "16": "images/get_started16.png",
-        "32": "images/get_started32.png",
-        "48": "images/get_started48.png",
-        "128": "images/get_started128.png"
+        "16": "images/icon16.png",
+        "32": "images/icon32.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
     },
     "manifest_version": 2
 }

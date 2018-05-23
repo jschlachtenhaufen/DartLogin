@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
 <head>
-  <script src="js/angular.min.js"></script>
-  <script src="js/sweetalert.min.js"></script>
+  <script src="/js/angular.min.js"></script>
+  <script src="/js/sweetalert.min.js"></script>
   <style>
     body {
       background-color: "#f8f8f8";
@@ -12,7 +12,11 @@
   </style>
 </head>
 <body ng-app="app" ng-controller="optionsController">
-  <script src="options.js"></script>
+  <div>
+    {{data}}
+    <button data-ng-click="onClickTest()">Click me</button>
+  </div>
+  <script src="/js/options.js"></script>
 </body>
 </html>
 
