@@ -1,20 +1,178 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
 <head>
+  <title>Dart Login</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:700" rel="stylesheet">
   <script src="/js/angular.min.js"></script>
   <script src="/js/sweetalert.min.js"></script>
   <style>
+
+    * {
+      overflow: scroll;
+    }
+
     body {
-      background-color: "#f8f8f8";
+      background-color: #edf2ed;
       overflow: hidden;
       margin: 0px;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
+     
+    h1 {
+      font-family: Poppins;
+      font-weight: bold;
+      color: #00693e;
+      font-size: 40px;
+      margin-bottom: 0px;
+      text-align: center;
+    }
+
+    h4 {
+      font-size: 20px;
+      margin-top: 0px;
+      text-align: center;
+    }
+
+    #container {
+      border-radius: 12px;
+      background-color: white;
+      border-style: solid;
+      border-color: #006932;
+      border-width: 2px;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 70px 0px 70px;
+      margin: auto;
+      -webkit-box-shadow: 0 2px 3px 1px #666;
+      width: 30%;
+    }
+
+    @media (max-width:1200px) {
+      #container {
+        width: 30%;
+      }
+    }
+
+    @media (max-width:992px) {
+      #container {
+        width: 40%;
+      }
+    }
+
+    @media (max-width:768px) {
+      #container {
+        width: 60%;
+      }
+    }
+
+    @media (max-width:576px) {
+      #container {
+        width: 60%;
+      }
+    }
+
+    .bottom-dashed {
+      border-bottom: 3px dashed #000;
+    }
+
+    form {
+      padding-bottom: 30px;
+    }
+
+    h3 {
+      text-align: center;
+      font-family: Poppins;
+      font-weight: bold;
+      font-size: 25px;
+      line-height: 1.6;
+    }
+    
+    h5 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    input {
+      height: 2em;
+      color: #000;
+      font-size: 15px;
+      border: 0;
+      border-bottom: 1px;
+      border-style: solid;
+      border-bottom-color: #000;
+      font-weight: lighter;
+      margin-bottom: 20px;
+      outline: 0;
+      height: 25px;
+    }
+
+    button {
+      background-color: #edf2e2;
+      border-width: 2px;
+      border-color: #00693e;
+      border-style: solid;
+      border-radius: 15px;
+      height: 35px;
+      width: 40%;
+      margin: 10px auto 0 auto;
+      color: black;
+      outline: 0;
+      font-size: 20px;
+      cursor: pointer;
+      display: block;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      letter-spacing: 1px;
+      overflow: visible;
+
+    }
+
+    button:hover {
+      background-color: #5b965b;
+      color: white;
+    }
+
+    textarea {
+      border: 1px solid #e6e6e6;
+      border-radius: 3px;
+      border-color: black;
+      min-height: 120px;
+      width: 90%;
+      font-size: 16px;
+      color: black;
+      line-height: 1.8;
+      display: block;
+      outline: 0;
+      overflow: auto;
+      resize: vertical;
+      margin: 10px 0 20px 0;
+      background-color: #f8f8f8;
+    }
+
   </style>
 </head>
 <body ng-app="app" ng-controller="optionsController">
-  <div>
-    {{data}}
-    <button data-ng-click="onClickTest()">Click me</button>
+  <h1>Dart Login</h1>
+  <h4>Help and Options</h4>
+  <div id="container">
+    <form class="bottom-dashed" data-ng-submit="optionsSubmit()">
+      <h3>Login Options</h3>
+      <h5>Net Id:</h5>
+      <input type="text" data-ng-required="true" data-ng-model="netId">
+      <h5>Password:</h5>
+      <input type="password" data-ng-required="true" data-ng-model="password">
+      <h5>Confirm Password:</h5>
+      <input type="password" data-ng-required="true" data-ng-model="confirmPassword">
+      <button>Submit</button>
+    </form>
+    <form data-ng-submit="feedbackSubmit()">
+      <h3>Help and Feedback</h3>
+      <h5>Leave Me a Message:</h5>
+      <textarea data-ng-required="true" placeholder="Your Message" data-ng-model="textarea"></textarea>
+      <button>Submit</button>
+    </form>
   </div>
   <script src="/js/options.js"></script>
 </body>

@@ -1,9 +1,18 @@
 var app = angular.module('app', []);
 
 app.controller('optionsController', function($scope) {
-    $scope.data = "Angular test";
+    
+    $scope.optionsSubmit = function () {
+        let netId = $scope.netId;
+        let password = $scope.password;
+        let confirmPassword = $scope.confirmPassword;
+        console.log(netId);
+        console.log(password);
+        console.log(confirmPassword);
+    }
 
-    $scope.onClickTest = function() {
-        swal("Is this working!?");
+    $scope.feedbackSubmit = function() {
+        let message = $scope.textarea;
+        console.log(message);
     }
 });
