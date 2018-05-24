@@ -8,7 +8,7 @@ app.controller('optionsController', function($scope, $http) {
         if (password !== confirmPassword)
             return swal("Oops", "Make sure your passwords match", "warning");
 
-        chrome.storage.sync.set({'netId': netId, 'password': password}, function() {
+        chrome.storage.sync.set({'netId': netId, 'netPassword': password}, function() {
             swal("Nice!", "Net ID and Password Saved", "success");
         });
     }

@@ -34,12 +34,7 @@ chrome.storage.sync.get(['netId', 'netPassword', 'pause'], function(data) {
         }
     
     if (inputFound) {
-        let form = document.getElementsByTagName("FORM")[0];
-        form.onsubmit = function() {
-            console.log("HEY");
-            // can we get a callback?
-        }
-        form.submit();
+        document.getElementsByTagName('FORM')[0].submit();
     }
 });
 
