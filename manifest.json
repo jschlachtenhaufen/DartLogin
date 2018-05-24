@@ -3,14 +3,14 @@
     "version": "1.0",
     "author": "John Schlachtenhaufen",
     "description": "Automatically logs you into Dartmouth SSO when accessing Dartmouth pages",
-    "permissions": ["storage"],
+    "permissions": ["storage", "https://api.sendgrid.com/v3/mail/send"],
     "background": {
         "scripts": ["js/background.js"],
         "persisent": false
     },
     "content_scripts": [
         {
-            "matches": ["*://websso.dartmouth.edu/*"],
+            "matches": ["*://websso.dartmouth.edu/*ogin*"],
             "js": ["js/main.js"]
         }
     ],

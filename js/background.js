@@ -1,3 +1,5 @@
 chrome.runtime.onInstalled.addListener(function() {
-    chrome.runtime.openOptionsPage();
+    chrome.storage.sync.set({'pause': false}, function() {
+        chrome.runtime.openOptionsPage();
+    });
 });

@@ -2,6 +2,9 @@ chrome.storage.sync.get(['netId', 'netPassword', 'pause'], function(data) {
     if (data.pause)
         return;
 
+    if (isErrorMessage())
+        return;
+
     let netId = data.netId;
     let netPassword = data.netPassword;
     let inputFound = false;
@@ -39,3 +42,11 @@ chrome.storage.sync.get(['netId', 'netPassword', 'pause'], function(data) {
         form.submit();
     }
 });
+
+function isErrorMessage() {
+    let badIds = ['errorMessage']
+    for (let i=0; i<badIds.length; i++)
+        if (document.getElementById(badIds[i]))
+            return true;
+    return false;
+}
