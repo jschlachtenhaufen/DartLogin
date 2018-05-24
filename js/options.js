@@ -1,7 +1,5 @@
 var app = angular.module('app', []);
-var apiKey = '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';
 app.controller('optionsController', function($scope, $http) {
-    
     $http.defaults.headers.common.Authorization = 'Bearer ' + apiKey;
     $scope.optionsSubmit = function () {
         let netId = $scope.netId;
